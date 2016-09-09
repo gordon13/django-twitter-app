@@ -1,0 +1,11 @@
+{% if tweets %}
+	<h1>Latest tweets from Mapplecroft Risk</h1>
+    <ul>
+    {% for tweet in tweets %}
+        <li>{{tweet.text|safe}}<br>{{tweet.user_location|safe}}</li>
+    {% endfor %}
+    </ul>
+    <h1>Map of tweets</h1>
+{% else %}
+    <p>No tweets available.</p>
+{% endif %}
