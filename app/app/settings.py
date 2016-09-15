@@ -49,6 +49,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+#     }
+# }
+
 ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
