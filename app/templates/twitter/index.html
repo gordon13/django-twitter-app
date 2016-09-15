@@ -44,13 +44,14 @@
     </style>
 </head>
 <body>
+	{% load app_extras %}
 	<h1>Latest tweets from Maplecroft Risk</h1>
 	{% if tweets %}
 	<div class="tweets">
 	{% for tweet in tweets %}
 	    <div class="tweet">
 	    	<div class="counter-wrapper">
-	    		<div class="counter">{{forloop.counter}}</div>
+	    		<div class="counter">{{forloop.counter|to_char}}</div>
 	    	</div>
 	    	<div class="content-wrapper">
 	    		"{{tweet.text|safe}}"
@@ -68,6 +69,7 @@
 	    
 	<script>
 		function initMap(){
+			var labels = "ABCDEFGHIJ"
 			var coordinates_group = {{coordinates|safe}};
 			var center = getCenterCoordinate(coordinates_group);
 			var map = new google.maps.Map(document.getElementById('map'), {
@@ -78,11 +80,10 @@
 			for (var i = 0; i < coordinates_group.length; i++) {
 				for (var j = 0; j < coordinates_group[i].length; j++) {
 					var coordinate = {"lng":coordinates_group[i][j]["lng"], "lat":coordinates_group[i][j]["lat"]}
-					console.log(i, coordinates_group[i][j]["name"], coordinate)
 					var marker = new google.maps.Marker({
 						position: coordinate,
 						map: map,
-						label: ""+(i+1),
+						label: labels[i],
 						title: coordinates_group[i][j]["name"]
 					});
 				}
