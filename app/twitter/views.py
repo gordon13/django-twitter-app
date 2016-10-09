@@ -15,8 +15,8 @@ import os
 # path where the country csv lives
 COUNTRY_DATA_PATH = "%s\\twitter\\data\\countries.csv"%os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # key information for the for twitter api
-CONSUMER_KEY = "rgvYj8SZvBpMOpJQtdWWRjbLN"
-SECRET = "FCGns4cHNfyvhhuGDLNJ1AGFCgl1ruzCpFjb4EMlElXyBSPPhj"
+CONSUMER_KEY = ""
+SECRET = ""
 # token generated for the twitter api
 BEAR_TOKEN = None
 # time for which to hold the data in the cache
